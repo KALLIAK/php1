@@ -1,14 +1,10 @@
 <?php
 session_start();
 
-if (isset($_SESSION['is_auth'])) {
-    unset($_SESSION['is_auth']);
-}
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($_POST['login'] == 'admin' && $_POST['password'] == '12345') {
         $_SESSION['is_auth'] = true;
-        if ($_POST['remember']) {
+        if (isset($_POST['remember']) && $_POST['remember']) {
             setcookie('login', hash('sha256', 'admin' . 'salt'), time() + 3600 * 24 * 7);
             setcookie('password', hash('sha256', '12345' . 'salt'), time() + 3600 * 24 * 7);
         }

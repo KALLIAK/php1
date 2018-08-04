@@ -16,4 +16,4 @@ if (!isset($_SESSION['is_auth']) || !$_SESSION['is_auth']) {
 echo 'Closed info';
 ?>
 <br>
-<a href="login.php">Выход</a>
+<a href="logout.php">Выход</a>
