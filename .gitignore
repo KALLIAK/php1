@@ -330,3 +330,5 @@ vendor
 composer.phar
 
 .env
+.idea/jsLibraryMappings.xml
+.idea/php1.iml
