@@ -25,5 +25,6 @@ foreach ($list as $fname) {
 
     <br>
     <button><a href="add.php" style="text-decoration: none; color: #000;">Добавить</a></button>
+    <button><a href="logout.php" style="text-decoration: none; color: black">Выход</a></button>
 </div>
 </body>
