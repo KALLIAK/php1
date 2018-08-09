@@ -11,10 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header('Location: main.php');
         exit();
     } else {
-        echo '<h1>Wrong login or password!</h1>';
+        $msg = '<h1>Wrong login or password!</h1>';
     }
 }
-
+$msg = $msg ?? '';
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 <div class="container">
+    <?= $msg?>
     <form method="post">
         <label for="name">Логин:</label><br>
         <input id="name" name="login"> <br>

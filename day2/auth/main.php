@@ -14,7 +14,7 @@ if (!isset($_SESSION['is_auth']) || !$_SESSION['is_auth']) {
     exit();
 }
 
-echo 'Closed info';
+$msg = 'Closed info';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,6 +29,7 @@ echo 'Closed info';
 </head>
 <body>
 <div class="container">
+    <?= $msg ?>
     <br>
     <button><a href="logout.php" style="text-decoration: none">Выход</a></button>
 </div>
