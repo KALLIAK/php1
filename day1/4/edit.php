@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             unlink('data/' . $oldTitle);
         }
         file_put_contents('data/' . $title, $content);
-        header("Location: a.php");
+        header("Location: index.php");
         exit();
     }
 }
