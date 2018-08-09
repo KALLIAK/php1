@@ -18,8 +18,6 @@ if (!isset($_SESSION['is_auth']) || !$_SESSION['is_auth']) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = trim(htmlspecialchars($_POST['title']));
     $content = trim(htmlspecialchars($_POST['content']));
-    //$list = scandir('data');
-    //$isUnique = true;
     $msg = '';
 
     if ($title == '' || $content == '') {
@@ -38,6 +36,7 @@ $msg = $msg ?? '';
 $title = $title ?? '';
 $content = $content ?? '';
 ?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
