@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     if ($title == '' || $content == '') {
         $msg = 'Заполните все поля';
-    } elseif (checker($title)) {
+    } elseif (checker($title) || checker($oldTitle)) {
         $msg = 'Некорректное заглавие статьи!';
     } elseif (file_exists('data/' . $title) && $title != $oldTitle) {
         $msg = 'Такая статья уже есть!';

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -12,19 +15,26 @@
 
 <body>
 <div class="container">
-<?php
+    <?php
 
-$list = scandir('data');
+    $list = scandir('data');
 
-foreach ($list as $fname) {
-    if (is_file("data/$fname")) {
-        echo "<a href=\"post.php?fname=$fname\">$fname</a> <a href=\"edit.php?fname=$fname\">edit</a> <br>";
+    foreach ($list as $fname) {
+        if (is_file("data/$fname")) {
+            echo "<br><a href=\"post.php?fname=$fname\">$fname</a>";
+            if (isset($_SESSION['is_auth']) && $_SESSION['is_auth'] === true) {
+                echo " <a href=\"edit.php?fname=$fname\">(edit)</a>";
+            }
+        }
     }
-}
-?>
+    ?>
 
     <br>
-    <button><a href="add.php" style="text-decoration: none; color: #000;">Добавить</a></button>
-    <button><a href="logout.php" style="text-decoration: none; color: black">Выход</a></button>
+    <?php if (isset($_SESSION['is_auth']) && $_SESSION['is_auth'] === true) { ?>
+        <button><a href="add.php" style="text-decoration: none; color: #000;">Добавить</a></button>
+        <button><a href="logout.php" style="text-decoration: none; color: black">Выход</a></button>
+    <?php } else { ?>
+        <button><a href="login.php" style="text-decoration: none; color: #000;">Авторизация</a></button>
+    <?php } ?>
 </div>
 </body>
