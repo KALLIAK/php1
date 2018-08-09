@@ -29,5 +29,7 @@ if ($fname == null) {
 <body>
 <div class="container">
     <?= $msg ?>
+    <br>
+    <button><a href="index.php" style="text-decoration: none; color: #000;">Назад</a></button>
 </div>
 </body>
