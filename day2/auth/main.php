@@ -31,6 +31,6 @@ $msg = 'Closed info';
 <div class="container">
     <?= $msg ?>
     <br>
-    <button><a href="logout.php" style="text-decoration: none">Выход</a></button>
+    <button><a href="logout.php" style="text-decoration: none; color: black">Выход</a></button>
 </div>
 </body>
