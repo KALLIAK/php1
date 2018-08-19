@@ -5,6 +5,7 @@ session_start();
 $isAuth = isAuthorized();
 
 if ($isAuth === false) {
+    $_SESSION['returnUrl'] = $_SERVER['PHP_SELF'];
     header('Location: login.php');
     exit();
 }

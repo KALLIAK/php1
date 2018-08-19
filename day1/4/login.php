@@ -8,8 +8,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             setcookie('login', hash('sha256', 'admin' . 'salt'), time() + 3600 * 24 * 7, '/');
             setcookie('password', hash('sha256', '12345' . 'salt'), time() + 3600 * 24 * 7, '/');
         }
-        header('Location: index.php');
-        exit();
+        if (isset($_SESSION['returnUrl'])) {
+            header('Location: ' . $_SESSION['returnUrl']);
+            unset($_SESSION['returnUrl']);
+            exit();
+        } else {
+            header('Location: index.php');
+            exit();
+        }
     } else {
         $msg = '<h1>Wrong login or password!</h1>';
     }
