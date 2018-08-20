@@ -1,9 +1,16 @@
 <?php
+/**
+ * @param $fname
+ * @return false|int
+ */
 function checker($fname)
 {
     return preg_match('/[^0-9A-Za-z-_ ]/', $fname);
 }
 
+/**
+ * @return bool
+ */
 function isAuthorized()
 {
     $isAuth = false;
