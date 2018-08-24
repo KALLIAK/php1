@@ -32,7 +32,10 @@ if ($id === null || !preg_match('/^[1-9]\d*$/', $id)) {
     <?php
     if (!empty($message)) {
         echo "<h2>{$message['title']}</h2>";
+        echo "<pre>";
         echo $message['content'];
+        echo "</pre>";
+
     } ?>
     <br>
     <button><a href="index.php">Назад</a></button>
