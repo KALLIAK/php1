@@ -53,3 +53,12 @@ function db_check_error(PDOStatement $query)
     }
     return $info;
 }
+
+function last_error($error = '')
+{
+    static $lastError = '';
+    if ($error === '') {
+        return $lastError;
+    }
+    $lastError = $error;
+}

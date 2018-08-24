@@ -16,9 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $msg = '';
 
     if ($title == '' || $content == '') {
-        $msg = 'Заполните все поля';
+        last_error('Заполните все поля');
     } elseif (checker($title)) {
-        $msg = 'Некорректное заглавие статьи!';
+        last_error('Некорректное заглавие статьи!');
     } else {
         $query = db_query("INSERT INTO news (title, content) VALUES (:title, :content)",
             [
@@ -32,7 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 }
-$msg = $msg ?? '';
 $title = $title ?? '';
 $content = $content ?? '';
 ?>
@@ -52,6 +51,7 @@ $content = $content ?? '';
 
 <body>
 <div class="container">
+    <?=last_error()?>
     <form method="post">
         <label for="title">Название:</label><br>
         <input name="title" value="<?= $title ?>"><br>
@@ -59,6 +59,5 @@ $content = $content ?? '';
         <textarea name="content"><?= $content ?></textarea><br>
         <input type="submit" value="Добавить">
     </form>
-    <?php echo $msg; ?>
 </div>
 </body>

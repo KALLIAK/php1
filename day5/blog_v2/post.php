@@ -4,13 +4,13 @@ include_once 'functions.php';
 $id = htmlspecialchars($_GET['id']) ?? null;
 
 if ($id === null || !preg_match('/^[1-9]\d*$/', $id)) {
-    echo 'Ошибка 404, не передано id';
+    last_error('Ошибка 404, не передано id');
 } else {
     $query = db_query("SELECT * FROM news WHERE id_news=:id", ['id' => $id]);
     $info = db_check_error($query);
     $message = $query->fetch();
     if (empty($message)) {
-        echo 'Ошибка 404. Нет такой статьи!';
+        last_error('Ошибка 404. Нет такой статьи!');
     }
 }
 ?>
@@ -30,6 +30,7 @@ if ($id === null || !preg_match('/^[1-9]\d*$/', $id)) {
 <body>
 <div class="container">
     <?php
+    echo  last_error();
     if (!empty($message)) {
         echo "<h2>{$message['title']}</h2>";
         echo "<pre>";
