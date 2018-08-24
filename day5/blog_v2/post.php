@@ -1,6 +1,7 @@
 <?php
 include_once 'functions.php';
-$id = $_GET['id'] ?? null;
+
+$id = htmlspecialchars($_GET['id']) ?? null;
 
 if ($id === null) {
     echo 'Ошибка 404, не передано id';
