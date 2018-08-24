@@ -12,7 +12,7 @@ if ($isAuth === false) {
 
 $id = htmlspecialchars($_GET['id']) ?? null;
 
-if ($id == null) {
+if ($id === null) {
     echo 'Ошибка 404, не передано название';
     exit();
 } else {
@@ -27,12 +27,12 @@ if ($id == null) {
         $title = $message['title'];
     }
 }
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $title = trim(htmlspecialchars($_POST['title']));
     $content = trim(htmlspecialchars($_POST['content']));
     $msg = '';
 
-    if ($title == '' || $content == '') {
+    if ($title === '' || $content === '') {
         $msg = 'Заполните все поля';
     } elseif (checker($title)) {
         $msg = 'Некорректное заглавие статьи!';
@@ -41,6 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 'title' => $title,
                 'content' => $content
         ]);
+        $info = db_check_error($query);
         header("Location: index.php");
         exit();
     }
