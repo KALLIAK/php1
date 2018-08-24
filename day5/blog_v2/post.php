@@ -3,7 +3,7 @@ include_once 'functions.php';
 
 $id = htmlspecialchars($_GET['id']) ?? null;
 
-if ($id === null) {
+if ($id === null || !preg_match('/^[1-9]\d*$/', $id)) {
     echo 'Ошибка 404, не передано id';
 } else {
     $query = db_query("SELECT * FROM news WHERE id_news=:id", ['id' => $id]);
