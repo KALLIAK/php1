@@ -33,10 +33,8 @@ if ($id === null || !preg_match('/^[1-9]\d*$/', $id)) {
     echo  last_error();
     if (!empty($message)) {
         echo "<h2>{$message['title']}</h2>";
-        echo "<pre>";
-        echo $message['content'];
-        echo "</pre>";
-
+        echo "<em>{$message['dt']}</em><br><br>";
+        echo nl2br($message['content']);
     } ?>
     <br>
     <button><a href="index.php">Назад</a></button>
