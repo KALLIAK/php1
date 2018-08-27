@@ -20,3 +20,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         last_error('<h2>Wrong login or password!</h2>');
     }
 }
+
+include './views/v_login.php';
