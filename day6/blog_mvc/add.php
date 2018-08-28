@@ -28,4 +28,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $title = $title ?? '';
 $content = $content ?? '';
 
-include './views/v_add.php';
+$inner = template('v_add', [
+    'title' => $title,
+    'content' => $content
+]);
+echo template('v_main', [
+    'title' => 'Добавление новости',
+    'content' => $inner
+]);

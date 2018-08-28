@@ -13,4 +13,10 @@ if ($id === null || !preg_match('/^[1-9]\d*$/', $id)) {
     }
 }
 
-include './views/v_post.php';
+$inner = template('v_post', [
+    'message' => $message
+]);
+echo template('v_main', [
+    'title' => 'Просмотр новости',
+    'content' => $inner
+]);

@@ -5,5 +5,3 @@ foreach ($messages as $message) { ?>
     <a href="message.php?id=<?= $message['id_message'] ?>"><?= $message['message'] ?></a>
     <hr>
 <?php } ?>
-
-<button><a href="add.php">Post new message</a></button>

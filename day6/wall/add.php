@@ -1,6 +1,7 @@
 <?php
 include_once './models/messages.php';
 include_once './models/common.php';
+include_once './models/system.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = trim($_POST['user']) ?? '';
@@ -18,6 +19,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = '';
     $message = '';
 }
-echo last_error();
+$inner =  template('v_add', [
+    'user' => $user,
+    'message' => $message,
+    'error' => last_error()
+]);
 
-include './views/v_add.php';
+echo template('v_main', [
+    'title' => 'Добавление нового поста',
+    'content' => $inner
+]);

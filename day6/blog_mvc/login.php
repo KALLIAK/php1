@@ -21,4 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-include './views/v_login.php';
+$inner = template('v_login');
+echo template('v_main', [
+    'title' => 'Авторизация',
+    'content' => $inner
+]);

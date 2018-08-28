@@ -40,4 +40,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 $title = $title ?? '';
 $content = $content ?? '';
 
-include './views/v_edit.php';
+$inner = template('v_edit', [
+    'message' => $message
+]);
+echo template('v_main', [
+    'title' => 'Редактирование новости',
+    'content' => $inner
+]);
