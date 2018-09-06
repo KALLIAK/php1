@@ -20,3 +20,19 @@ function template($view, $vars = [])
     include "./views/{$view}.php";
     return ob_get_clean();
 }
+
+function menu()
+{
+    $menu = null;
+    $isAuth = isAuthorized();
+    if ($isAuth === true) {
+        $menu = '<li><a href="index.php">Главная</a></li>
+                <li><a href="add.php">Новый пост</a></li>
+                <li><a href="logout.php">Выход</a></li>';
+    } else {
+        $menu = '<li><a href="index.php">Главная</a></li>
+                <li><a href="add.php">Новый пост</a></li>
+                <li><a href="login.php">Авторизация</a></li>';
+    }
+    return $menu;
+}

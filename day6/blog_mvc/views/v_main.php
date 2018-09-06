@@ -30,8 +30,7 @@
                 <nav>
                     <div class="show_menu">Меню</div>
                     <ul>
-                        <li><a href="index.php">Главная</a></li>
-                        <li><a href="add.php">Новый пост</a></li>
+                        <?= $menu ?>
                     </ul>
                 </nav>
             </div>

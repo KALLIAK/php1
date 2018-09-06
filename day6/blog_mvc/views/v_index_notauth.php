@@ -2,4 +2,3 @@
     <br><a href="post.php?id=<?= $message['id_news'] ?>"><?= $message['title'] ?></a>
 <?php endforeach; ?>
 <br>
-<button><a href="login.php">Авторизация</a></button>

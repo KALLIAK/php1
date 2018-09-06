@@ -6,5 +6,4 @@
     <input type="password" id="pass" name="password"><br>
     <input type="checkbox" id="remember" name="remember">Запомнить<br>
     <input type="submit" value="Авторизоваться">
-    <button><a href="index.php">На главную</a></button>
 </form>

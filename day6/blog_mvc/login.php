@@ -2,6 +2,7 @@
 include_once './models/common.php';
 include_once './models/authorization.php';
 session_start();
+$menu = menu();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $login = htmlspecialchars(trim($_POST['login']));
@@ -23,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $inner = template('v_login');
 echo template('v_main', [
+    'menu' => $menu,
     'title' => 'Авторизация',
     'content' => $inner
 ]);

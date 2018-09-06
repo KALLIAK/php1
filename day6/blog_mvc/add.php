@@ -5,6 +5,7 @@ include_once './models/authorization.php';
 session_start();
 
 $isAuth = isAuthorized();
+$menu = menu();
 
 if ($isAuth === false) {
     $_SESSION['returnUrl'] = $_SERVER['PHP_SELF'];
@@ -33,6 +34,7 @@ $inner = template('v_add', [
     'content' => $content
 ]);
 echo template('v_main', [
+    'menu' => $menu,
     'title' => 'Добавление новости',
     'content' => $inner
 ]);

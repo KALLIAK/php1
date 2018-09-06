@@ -3,4 +3,3 @@
     <a href="edit.php?id=<?= $message['id_news'] ?>">&lt;- (edit)</a>
 <?php endforeach; ?>
 <br>
-<button><a href="logout.php">Выход</a></button>
