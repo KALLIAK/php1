@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
+    <link href="./assets/css/styles.css" rel="stylesheet" type="text/css">
     <title><?=$title?></title>
 </head>
 
@@ -25,8 +25,8 @@
                 <nav>
                     <div class="show_menu">Меню</div>
                     <ul>
-                        <li><a href="index.php">Главная</a></li>
-                        <li><a href="add.php">Новый пост</a></li>
+                        <li><a href="index.php?c=home">Главная</a></li>
+                        <li><a href="index.php?c=add">Новый пост</a></li>
                         <li><a href="#">Продукты</a></li>
                         <li><a href="#">Услуги</a></li>
                         <li><a href="#">Контакты</a></li>
@@ -45,8 +45,6 @@
                             <li><a href="#">Прайсы</a></li>
                             <li><a href="#">Сорта рогов</a></li>
                             <li><a href="#">Сроки поставки</a></li>
-                            <li><a href="#">Ухахаха</a></li>
-                            <li><a href="#">Ухахаха</a></li>
                         </ul>
                     </div>
                     <div class="col fl-r">
@@ -55,8 +53,6 @@
                             <li><a href="#">Прайсы</a></li>
                             <li><a href="#">Сорта рогов</a></li>
                             <li><a href="#">Сроки поставки</a></li>
-                            <li><a href="#">Ухахаха</a></li>
-                            <li><a href="#">Ухахаха</a></li>
                         </ul>
                     </div>
                     <div class="clear"></div>
@@ -76,7 +72,7 @@
         </div>
     </footer>
 </div>
-<script src="assets/js/jquery-1.11.0.min.js" type="text/javascript"></script>
-<script src="assets/js/scripts.js" type="text/javascript"></script>
+<script src="./assets/js/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script src="./assets/js/scripts.js" type="text/javascript"></script>
 </body>
 </html>

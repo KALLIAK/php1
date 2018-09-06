@@ -1,8 +1,6 @@
 <?php
-include_once './models/common.php';
-include_once './models/authorization.php';
-session_start();
 $menu = menu();
+$page_title = 'Авторизация';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $login = htmlspecialchars(trim($_POST['login']));
@@ -14,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             unset($_SESSION['returnUrl']);
             exit();
         } else {
-            header('Location: index.php');
+            header('Location: index.php?c=home');
             exit();
         }
     } else {
@@ -23,8 +21,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $inner = template('v_login');
-echo template('v_main', [
-    'menu' => $menu,
-    'title' => 'Авторизация',
-    'content' => $inner
-]);

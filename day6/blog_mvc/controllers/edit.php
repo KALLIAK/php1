@@ -1,15 +1,11 @@
 <?php
-include_once './models/common.php';
-include_once './models/news.php';
-include_once './models/authorization.php';
-session_start();
-
 $isAuth = isAuthorized();
 $menu = menu();
+$page_title = 'Редактирование новости';
 
 if ($isAuth === false) {
-    $_SESSION['returnUrl'] = $_SERVER['PHP_SELF'] . '?id=' . $_GET['id'];
-    header('Location: login.php');
+    $_SESSION['returnUrl'] = $_SERVER['PHP_SELF'] . '?c=edit&id=' . $_GET['id'];
+    header('Location: index.php?c=login');
     exit();
 }
 
@@ -33,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         last_error('Заполните все поля');
     } else {
         news_edit($id, $title, $content);
-        header("Location: index.php");
+        header("Location: index.php?c=home");
         exit();
     }
 }
@@ -43,9 +39,4 @@ $content = $content ?? '';
 
 $inner = template('v_edit', [
     'message' => $message
-]);
-echo template('v_main', [
-    'menu' => $menu,
-    'title' => 'Редактирование новости',
-    'content' => $inner
 ]);

@@ -26,13 +26,13 @@ function menu()
     $menu = null;
     $isAuth = isAuthorized();
     if ($isAuth === true) {
-        $menu = '<li><a href="index.php">Главная</a></li>
-                <li><a href="add.php">Новый пост</a></li>
-                <li><a href="logout.php">Выход</a></li>';
+        $menu = '<li><a href="index.php?c=home">Главная</a></li>
+                <li><a href="index.php?c=add">Новый пост</a></li>
+                <li><a href="index.php?c=logout">Выход</a></li>';
     } else {
-        $menu = '<li><a href="index.php">Главная</a></li>
-                <li><a href="add.php">Новый пост</a></li>
-                <li><a href="login.php">Авторизация</a></li>';
+        $menu = '<li><a href="index.php?c=home">Главная</a></li>
+                <li><a href="index.php?c=add">Новый пост</a></li>
+                <li><a href="index.php?c=login">Авторизация</a></li>';
     }
     return $menu;
 }

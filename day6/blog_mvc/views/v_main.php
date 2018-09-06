@@ -46,8 +46,6 @@
                             <li><a href="#">Прайсы</a></li>
                             <li><a href="#">Сорта рогов</a></li>
                             <li><a href="#">Сроки поставки</a></li>
-                            <li><a href="#">Ухахаха</a></li>
-                            <li><a href="#">Ухахаха</a></li>
                         </ul>
                     </div>
                     <div class="col fl-r">
@@ -56,8 +54,6 @@
                             <li><a href="#">Прайсы</a></li>
                             <li><a href="#">Сорта рогов</a></li>
                             <li><a href="#">Сроки поставки</a></li>
-                            <li><a href="#">Ухахаха</a></li>
-                            <li><a href="#">Ухахаха</a></li>
                         </ul>
                     </div>
                     <div class="clear"></div>

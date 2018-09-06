@@ -4,26 +4,12 @@ include_once './models/news.php';
 include_once './models/common.php';
 session_start();
 
-$isAuth = isAuthorized();
-$messages = news_all();
-$menu = menu();
+$controller = $_GET['c'] ?? 'home';
+include_once "./controllers/$controller.php";
 
-if ($isAuth === true) {
-    $inner = template('v_index_auth', [
-        'messages' => $messages
-    ]);
-    echo template('v_main', [
-        'menu' => $menu,
-        'title' => 'Главная',
-        'content' => $inner
-    ]);
-} else {
-    $inner = template('v_index_notauth', [
-        'messages' => $messages
-    ]);
-    echo template('v_main', [
-        'menu' => $menu,
-        'title' => 'Главная',
-        'content' => $inner
-    ]);
-}
+echo template('v_main', [
+    'menu' => $menu,
+    'title' => $page_title,
+    'content' => $inner
+]);
+

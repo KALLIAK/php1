@@ -1,5 +1,4 @@
 <?php
-session_start();
 if (isset($_SESSION['is_auth'])) {
     unset($_SESSION['is_auth']);
 }
@@ -14,5 +13,5 @@ if (isset($_COOKIE['password'])) {
     setcookie('password', null, -1, '/');
 }
 
-header('Location: login.php');
+header('Location: index.php?c=login');
 exit();

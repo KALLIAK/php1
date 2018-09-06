@@ -1,15 +1,11 @@
 <?php
-include_once './models/common.php';
-include_once './models/news.php';
-include_once './models/authorization.php';
-session_start();
-
 $isAuth = isAuthorized();
 $menu = menu();
+$page_title = 'Добавление новости';
 
 if ($isAuth === false) {
-    $_SESSION['returnUrl'] = $_SERVER['PHP_SELF'];
-    header('Location: login.php');
+    $_SESSION['returnUrl'] = $_SERVER['PHP_SELF'] . '?c=add';
+    header('Location: index.php?c=login');
     exit();
 }
 
@@ -22,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         last_error('Заполните все поля');
     } else {
         news_add($title, $content);
-        header("Location: index.php");
+        header("Location: index.php?c=home");
         exit();
     }
 }
@@ -32,9 +28,4 @@ $content = $content ?? '';
 $inner = template('v_add', [
     'title' => $title,
     'content' => $content
-]);
-echo template('v_main', [
-    'menu' => $menu,
-    'title' => 'Добавление новости',
-    'content' => $inner
 ]);
