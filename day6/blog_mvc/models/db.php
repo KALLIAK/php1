@@ -10,15 +10,6 @@ function db_connect()
     return $db;
 }
 
-function db_query($sql, $params = [])
-{
-    $db = db_connect();
-    $query = $db->prepare($sql);
-    $query->execute($params);
-    db_check_error($query);
-    return $query;
-}
-
 function db_check_error(PDOStatement $query)
 {
     $info = $query->errorInfo();
@@ -26,4 +17,13 @@ function db_check_error(PDOStatement $query)
         exit($info[2]);
     }
     return $info;
+}
+
+function db_query($sql, $params = [])
+{
+    $db = db_connect();
+    $query = $db->prepare($sql);
+    $query->execute($params);
+    db_check_error($query);
+    return $query;
 }

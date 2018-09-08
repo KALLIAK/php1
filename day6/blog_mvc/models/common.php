@@ -37,6 +37,7 @@ function menu()
         $menu .= '<li><a href="' . ROOT . '/logout">Выход</a></li>';
     } else {
         $menu .= '<li><a href="' . ROOT . '/login">Авторизация</a></li>';
+        $menu .= '<li><a href="' . ROOT . '/register">Регистрация</a></li>';
     }
     return $menu;
 }
