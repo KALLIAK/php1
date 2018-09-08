@@ -32,4 +32,5 @@ echo template('v_main', [
     'title' => $page_title,
     'content' => $inner
 ]);
+exit();
 
