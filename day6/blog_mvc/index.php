@@ -7,7 +7,7 @@ $err404 = false;
 
 $controller = $_GET['c'] ?? 'home';
 
-if (check_controller($controller) || !file_exists("./controllers/$controller.php")) {
+if (!check_controller($controller) || !file_exists("./controllers/$controller.php")) {
     $err404 = true;
 } else {
     include_once "./controllers/$controller.php";

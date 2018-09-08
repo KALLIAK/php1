@@ -10,12 +10,12 @@ function last_error($error = '')
 
 function checker($fname)
 {
-    return preg_match('/[^0-9A-Za-z-_ :]/', $fname);
+    return !preg_match('/[^0-9A-Za-z-_ :]/', $fname);
 }
 
 function check_controller($fname)
 {
-    return preg_match('/[^0-9A-Za-z-_]/', $fname);
+    return !preg_match('/[^0-9A-Za-z-_]/', $fname);
 }
 
 function template($view, $vars = [])
