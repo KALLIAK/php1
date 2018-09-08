@@ -4,12 +4,12 @@ $menu = menu();
 $page_title = 'Редактирование новости';
 
 if ($isAuth === false) {
-    $_SESSION['returnUrl'] = $_SERVER['PHP_SELF'] . '?c=edit&id=' . $_GET['id'];
-    header('Location: index.php?c=login');
+    $_SESSION['returnUrl'] = ROOT . '/edit/' . $params[1];
+    header('Location: ' . ROOT . '/login');
     exit();
 }
 
-$id = htmlspecialchars($_GET['id']) ?? null;
+$id = $params[1] ?? null;
 
 if ($id === null || !preg_match('/^[1-9]\d*$/', $id)) {
     $err404 = true;
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         last_error('Заполните все поля');
     } else {
         news_edit($id, $title, $content);
-        header("Location: index.php?c=home");
+        header('Location: ' . ROOT . '/home');
         exit();
     }
 }

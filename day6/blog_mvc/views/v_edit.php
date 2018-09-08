@@ -1,5 +1,5 @@
 <?php echo last_error(); ?>
-<form action="index.php?c=edit&id=<?= $message['id_news'] ?>" method="post">
+<form action="<?=ROOT?>/edit/<?= $message['id_news'] ?>" method="post">
     <label for="title">Название:</label><br>
     <input name="title" value="<?= $message['title'] ?>"><br>
     <label for="content">Контент:</label><br>

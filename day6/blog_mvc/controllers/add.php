@@ -4,8 +4,8 @@ $menu = menu();
 $page_title = 'Добавление новости';
 
 if ($isAuth === false) {
-    $_SESSION['returnUrl'] = $_SERVER['PHP_SELF'] . '?c=add';
-    header('Location: index.php?c=login');
+    $_SESSION['returnUrl'] = ROOT . '/add';
+    header('Location: ' . ROOT . '/login');
     exit();
 }
 
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         last_error('Заполните все поля');
     } else {
         news_add($title, $content);
-        header("Location: index.php?c=home");
+        header('Location: ' . ROOT . '/home');
         exit();
     }
 }

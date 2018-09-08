@@ -1,5 +1,5 @@
 <?= last_error() ?>
-<form action="index.php?c=add" method="post">
+<form action="<?=ROOT?>/add" method="post">
     <label for="title">Название:</label><br>
     <input name="title" value="<?= $title ?>"><br>
     <label for="content">Контент:</label><br>

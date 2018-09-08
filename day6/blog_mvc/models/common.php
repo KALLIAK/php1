@@ -30,13 +30,13 @@ function menu()
 {
     $menu = null;
     $isAuth = isAuthorized();
-    $menu = '<li><a href="index.php?c=home">Главная</a></li>
-            <li><a href="index.php?c=add">Новый пост</a></li>';
+    $menu = '<li><a href="' . ROOT . '/home">Главная</a></li>
+            <li><a href="' . ROOT . '/add">Новый пост</a></li>';
 
     if ($isAuth === true) {
-        $menu .= '<li><a href="index.php?c=logout">Выход</a></li>';
+        $menu .= '<li><a href="' . ROOT . '/logout">Выход</a></li>';
     } else {
-        $menu .= '<li><a href="index.php?c=login">Авторизация</a></li>';
+        $menu .= '<li><a href="' . ROOT . '/login">Авторизация</a></li>';
     }
     return $menu;
 }

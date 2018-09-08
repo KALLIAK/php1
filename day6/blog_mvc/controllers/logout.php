@@ -13,5 +13,5 @@ if (isset($_COOKIE['password'])) {
     setcookie('password', null, -1, '/');
 }
 
-header('Location: index.php?c=login');
+header('Location: ' . ROOT . '/home');
 exit();

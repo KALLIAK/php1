@@ -1,5 +1,5 @@
 <?= last_error() ?>
-<form action="index.php?c=login" method="post" >
+<form action="<?=ROOT?>/login" method="post" >
     <label for="name">Логин:</label><br>
     <input id="name" name="login"> <br>
     <label for="pass">Пароль:</label><br>

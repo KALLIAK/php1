@@ -2,7 +2,7 @@
 $menu = menu();
 $page_title = 'Просмотр новости';
 
-$id = htmlspecialchars($_GET['id']) ?? null;
+$id = $params[1] ?? null;
 
 if ($id === null || !preg_match('/^[1-9]\d*$/', $id)) {
     $err404 = true;

@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             unset($_SESSION['returnUrl']);
             exit();
         } else {
-            header('Location: index.php?c=home');
+            header('Location: ' . ROOT . '/home');
             exit();
         }
     } else {
